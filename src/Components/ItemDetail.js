@@ -1,11 +1,11 @@
 
 
-const ItemDetail = ({productos}) => {
+const ItemDetail = ({productosM}) => {
   return (
     <div>
         
         
-        <p>Precio : ${productos.precio}</p>
+        <p>Precio : ${productosM.precio}</p>
     </div>
   )
 }

@@ -1,15 +1,15 @@
 import {useState} from "react"
 
 
-const Main = (props) => {
+const ItemCount = ({initial,stock,onAdd}) => {
 
-    const [contador, setContador] = useState(props.initial)
+    const [contador, setContador] = useState(initial)
 
 
     const agregar = () => {
       
         ;
-        if (contador < props.stock){
+        if (contador < stock){
             setContador(contador + 1)
         }
     }
@@ -29,9 +29,9 @@ const Main = (props) => {
 
     return (
         <main className="container">
-            <h2>Bienvenido {props.nombre}!</h2>
-            <p>Cantidad de Libros en Stock: {props.stock}</p>
-            <p>Cantidad de Libros: {contador}</p>
+            
+            <p>Cantidad Disponible: {stock}</p>
+            <p>Cantidad de Macetas: {contador}</p>
 
             <button onClick={agregar}>Agregar</button>
            
@@ -42,4 +42,4 @@ const Main = (props) => {
     );
 }
 
-export default Main;
+export default ItemCount;

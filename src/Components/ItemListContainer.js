@@ -53,10 +53,12 @@ const ItemListContainer = () => {
             
         , 2000)
     })
+    
 
         promesa
         .then((respuestaDeLaApi) => {
-            setProductos(productosMacetas)
+        
+         setProductos(productosMacetas) 
         })
         .catch((errorDeLaApi) => {
             console.log("Error al cargar los productos")
@@ -71,7 +73,7 @@ const ItemListContainer = () => {
     return (
         <>
             <p>{loading ? "Cargando..." : "Productos a la Venta:"}</p>
-            <ListItem productosMacetas={productos}/>
+            <ListItem productosM={productos}/>
         </>
     )
 }

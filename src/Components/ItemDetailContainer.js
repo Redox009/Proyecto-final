@@ -33,7 +33,7 @@ let productosMacetas = [
 
 const ItemDetailContainer = () => {
         
-        const [productos, setProductos] = useState([])
+        const [producto, setProducto] = useState([])
         const [loading, setLoading] = useState(true)
         const {id} = useParams()
         
@@ -43,13 +43,7 @@ const ItemDetailContainer = () => {
             const promesa = new Promise((res, rej) => {
                 setTimeout(() => {
                     console.log(id)
-                    if (!id) {
-                        return productosMacetas.filter(productosMacetas => productosMacetas.id === id)
-                          
-                    } else {
-                        
-                        return res(productosMacetas) 
-                    }
+                   res(productosMacetas)
                     
                  
                 }, 2000)
@@ -57,7 +51,7 @@ const ItemDetailContainer = () => {
       
             promesa
             .then((respuestaDeLaApi) => {
-                setProductos(productosMacetas)
+                setProducto(productosMacetas)
             })
             .catch((errorDeLaApi) => {
                 console.log("Error al cargar el producto")
@@ -70,8 +64,8 @@ const ItemDetailContainer = () => {
     
         return (
             <>
-            <ItemDetail productosMacetas={productos}/>
-            {/* <ItemCount productosMacetas={productos}/> */}
+            <ItemDetail productosM={producto}/>
+            <ItemCount initial={1} stock={producto.stock} onAdd={()=>{}}/>
             </>
         )
     }
