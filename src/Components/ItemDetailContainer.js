@@ -1,5 +1,5 @@
 import ItemDetail from "../Components/ItemDetail"
-import ItemCount from "../Components/ItemCount"
+
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
@@ -61,11 +61,13 @@ const ItemDetailContainer = () => {
             })
     
         },[id])
+
+       
     
         return (
             <>
             <ItemDetail productosM={producto}/>
-            <ItemCount initial={1} stock={producto.stock} onAdd={()=>{}}/>
+            
             </>
         )
     }

@@ -27,6 +27,11 @@ const ItemCount = ({initial,stock,onAdd}) => {
         setContador(0)
     }
 
+    const confirmar = (e) => {
+        console.log(e)
+        onAdd(contador)
+    }
+
     return (
         <main className="container">
             
@@ -35,9 +40,12 @@ const ItemCount = ({initial,stock,onAdd}) => {
 
             <button onClick={agregar}>Agregar</button>
            
-            <button onClick={quitar}>restar</button>
+            <button onClick={quitar}>Restar</button>
 
             <button onClick={resetear}>Resetear</button>
+            <br></br>
+            <br></br>
+            <button onClick={confirmar}>Confirmar</button>
         </main>
     );
 }
